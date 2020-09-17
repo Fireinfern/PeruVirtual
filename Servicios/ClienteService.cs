@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Servicios
+{
+    public class ClienteService
+    {
+        public static void CreateClient(string email, string contrasenia, string nombreUsuario, string nombre)
+        {
+            using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
+            {
+                ClassLibrary1.cliente client = new ClassLibrary1.cliente { correo = email, nombre = nombre };
+                db.cliente.Add(client);
+                db.SaveChanges();
+                var query = (from c in db.cliente
+                             where c.correo == email
+                             select new
+                             {
+                                 c.idCliente
+                             });
+                if (query.Any())
+                {
+                    UsuarioService.CreateUser(query.Single().idCliente, nombreUsuario, contrasenia);
+                }
+            }
+        }
+    }
+}

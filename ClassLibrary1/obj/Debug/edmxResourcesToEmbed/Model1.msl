@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PeruVirtualModelStoreContainer" CdmEntityContainer="PeruVirtualEntities">
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="PeruVirtualModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="PeruVirtualModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nomUsuario" ColumnName="nomUsuario" />
+          <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
