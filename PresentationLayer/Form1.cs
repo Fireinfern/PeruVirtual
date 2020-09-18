@@ -21,6 +21,7 @@ namespace PresentationLayer
         //Inicializacion de Servicios
         private Servicios.ClienteService clienteService = new Servicios.ClienteService();
         private Servicios.UsuarioService usuarioService = new Servicios.UsuarioService();
+        private Servicios.Facebooklogin facebookLogin = new Servicios.Facebooklogin();
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -129,6 +130,11 @@ namespace PresentationLayer
                 Valido = false;
                 ErrorRegLbl.Text = "Las contraseñas deben coincidir";
             }
+            if (!TerminosCondicionesCbx.Checked)
+            {
+                Valido = false;
+                ErrorRegLbl.Text = "Debe aceptar los terminos y condiciones para continuar";
+            }
             if (RegEmailTxt.Text == "" ||
             RegContraseniaTxt.Text == "" ||
             RegConfTxt.Text == ""||
@@ -151,6 +157,11 @@ namespace PresentationLayer
                 LoginPanel.Dock = DockStyle.Fill;
                 LoginPanel.Visible = true;
             }
+        }
+
+        private void FacebookLogin_Click(object sender, EventArgs e)
+        {
+            facebookLogin.getCode();
         }
     }
 }
