@@ -11,7 +11,7 @@ using Utilities.BunifuUserControl.Transitions;
 
 namespace PresentationLayer
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -27,7 +27,7 @@ namespace PresentationLayer
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
