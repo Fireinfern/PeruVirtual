@@ -8,7 +8,7 @@ namespace ModeloNegocio
 {
     public class Usuario
     {
-        public static List<ClassLibrary1.usuario> GetUsuarios()
+        public List<ClassLibrary1.usuario> GetUsuarios()
         {
             using(ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
             {
@@ -16,7 +16,7 @@ namespace ModeloNegocio
             }
         }
 
-        public static bool IsUsernameTaken(string username)
+        public bool IsUsernameTaken(string username)
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
             {

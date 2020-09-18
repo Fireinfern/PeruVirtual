@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace ModeloNegocio
 {
     public class Cliente{
-        public static List<ClassLibrary1.cliente> GetClientes()
+        public List<ClassLibrary1.cliente> GetClientes()
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
             {
                 return db.cliente.ToList();
             }
         }
-        public static bool IsEmailTaken(string email)
+        public bool IsEmailTaken(string email)
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
             {

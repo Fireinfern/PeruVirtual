@@ -8,7 +8,8 @@ namespace Servicios
 {
     public class ClienteService
     {
-        public static void CreateClient(string email, string contrasenia, string nombreUsuario, string nombre)
+        private UsuarioService usuarioService = new UsuarioService();
+        public void CreateClient(string email, string contrasenia, string nombreUsuario, string nombre)
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
             {
@@ -23,7 +24,7 @@ namespace Servicios
                              });
                 if (query.Any())
                 {
-                    UsuarioService.CreateUser(query.Single().idCliente, nombreUsuario, contrasenia);
+                    this.usuarioService.CreateUser(query.Single().idCliente, nombreUsuario, contrasenia);
                 }
             }
         }

@@ -9,7 +9,7 @@ namespace Servicios
 {
     public class UsuarioService
     {
-        public static int AccesClient(string nombreUsuario, string contrasenia)
+        public int AccesClient(string nombreUsuario, string contrasenia)
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
             {
@@ -27,7 +27,7 @@ namespace Servicios
             }
             return 0;
         }
-        public static void CreateUser(int idcliente, string nombreUsuario, string contrasenia)
+        public void CreateUser(int idcliente, string nombreUsuario, string contrasenia)
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
             {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities.BunifuUserControl.Transitions;
 
 namespace PresentationLayer
 {
@@ -14,6 +15,12 @@ namespace PresentationLayer
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
+        //Inicializacionde Capa ModeloNegocio
+        private ModeloNegocio.Cliente cliente = new ModeloNegocio.Cliente();
+        private ModeloNegocio.Usuario usuario = new ModeloNegocio.Usuario();
+        //Inicializacion de Servicios
+        private Servicios.ClienteService clienteService = new Servicios.ClienteService();
+        private Servicios.UsuarioService usuarioService = new Servicios.UsuarioService();
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -67,7 +74,7 @@ namespace PresentationLayer
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(Servicios.UsuarioService.AccesClient(UsernameTxt.Text, PasswordTxt.Text));
+            Console.WriteLine(this.usuarioService.AccesClient(UsernameTxt.Text, PasswordTxt.Text));
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -101,18 +108,18 @@ namespace PresentationLayer
             RegistroPanel.Visible = false;
             LoginPanel.Dock = DockStyle.Fill;
             LoginPanel.Visible = true;
-            WindowNameLbl.Text = "PeruVirtual - Registro";
+            WindowNameLbl.Text = "PeruVirtual - Login";
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             bool Valido = true;
-            if (ModeloNegocio.Cliente.IsEmailTaken(RegEmailTxt.Text))
+            if (this.cliente.IsEmailTaken(RegEmailTxt.Text))
             {
                 Valido = false;
                 ErrorRegLbl.Text = "Correo electronico no disponible";
             }
-            if (ModeloNegocio.Usuario.IsUsernameTaken(RegUsernameTxt.Text))
+            if (this.usuario.IsUsernameTaken(RegUsernameTxt.Text))
             {
                 Valido = false;
                 ErrorRegLbl.Text = "Nombre de usuario no disponible";
@@ -133,7 +140,7 @@ namespace PresentationLayer
             }
             if(Valido)
             {
-                //Servicios.ClienteService.CreateClient(RegEmailTxt.Text, RegContraseniaTxt.Text, RegUsernameTxt.Text, RegNombreTxt.Text);
+                this.clienteService.CreateClient(RegEmailTxt.Text, RegContraseniaTxt.Text, RegUsernameTxt.Text, RegNombreTxt.Text);
                 RegEmailTxt.Text = "";
                 RegContraseniaTxt.Text = "";
                 RegConfTxt.Text = "";
