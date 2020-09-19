@@ -149,16 +149,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplication.Designer.cs">
+      <DependentUpon>Aplication.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Aplication.aa.resx">
+      <DependentUpon>Aplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplication.resx">
+      <DependentUpon>Aplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +207,10 @@
     <ProjectReference Include="..\Servicios\Servicios.csproj">
       <Project>{2de43389-7026-4436-9666-32526aa0247f}</Project>
       <Name>Servicios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{9ee78447-35b0-45c9-b85a-86fb36338a87}</Project>
+      <Name>VO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

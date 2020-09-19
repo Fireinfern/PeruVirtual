@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,10 @@ namespace PresentationLayer
         private Servicios.ClienteService clienteService = new Servicios.ClienteService();
         private Servicios.UsuarioService usuarioService = new Servicios.UsuarioService();
         private Servicios.Facebooklogin facebookLogin = new Servicios.Facebooklogin();
+        //VO
+        private VO.Code code = new VO.Code();
+        private VO.Autho autho = new VO.Autho();
+        private VO.FacebookUser facebookUser = new VO.FacebookUser();
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -34,7 +39,7 @@ namespace PresentationLayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            LoginPanel.Dock = DockStyle.Fill;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,7 +80,8 @@ namespace PresentationLayer
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(this.usuarioService.AccesClient(UsernameTxt.Text, PasswordTxt.Text));
+            var nombre=this.clienteService.getClient(this.usuarioService.AccesClient(UsernameTxt.Text, PasswordTxt.Text));
+            MessageBox.Show("Bienvenido " + nombre, "Bienvenido", MessageBoxButtons.OK);
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -159,9 +165,51 @@ namespace PresentationLayer
             }
         }
 
-        private void FacebookLogin_Click(object sender, EventArgs e)
+        private async void FacebookLogin_Click(object sender, EventArgs e)
         {
-            facebookLogin.getCode();
+            this.code =await facebookLogin.getCode();
+            //Console.WriteLine(this.code.user_code);
+            //MessageBox.Show("Su codigo de confirmacion es " + this.code.user_code + " visite " + this.code.verification_uri, "Verifique su cuenta de Facebook", MessageBoxButtons.OK);
+            LoginPanel.Visible = false;
+            LoginPanel.Dock = DockStyle.None;
+            Login.ActiveForm.Height = 600;
+            ConfirmationPanel.Visible = true;
+            ConfirmationPanel.Dock = DockStyle.Fill;
+            FacebookBrowser.Height = 550;
+            //Console.WriteLine(this.code.verification_uri.GetType() + " " + this.code.verification_uri.ToString());
+            CodigoLbl.Text = "Tu Codigo: " + this.code.user_code;
+            FacebookBrowser.Navigate(this.code.verification_uri.ToString());
+            timer1.Enabled = true;
+        }
+
+        private void CancelFacebookBtn_Click(object sender, EventArgs e)
+        {
+            Login.ActiveForm.Height = 450;
+            ConfirmationPanel.Dock = DockStyle.None;
+            ConfirmationPanel.Visible = false;
+            LoginPanel.Dock = DockStyle.Fill;
+            LoginPanel.Visible = true;
+            WindowNameLbl.Text = "PeruVirtual - Login";
+        }
+
+        private void FacebookBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            
+
+        }
+
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            this.autho = await facebookLogin.getAuth(this.code.code);
+            //Console.WriteLine(autho.access_token);
+            if(autho.access_token != null)
+            {
+                timer1.Stop();
+                timer1.Enabled = false;
+                this.facebookUser=await facebookLogin.getUser(autho.access_token);
+                Console.WriteLine(facebookUser.name);
+                MessageBox.Show("Bienvenido " + facebookUser.name, "Bienvenido", MessageBoxButtons.OK);
+            }
         }
     }
 }

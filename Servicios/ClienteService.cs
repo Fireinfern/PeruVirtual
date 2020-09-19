@@ -28,5 +28,24 @@ namespace Servicios
                 }
             }
         }
+        public string getClient(int id)
+        {
+            using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
+            {
+                var query = (from c in db.cliente
+                             where c.idCliente == id
+                             select new
+                             {
+                                 c.idCliente,
+                                 c.nombre,
+                                 c.correo
+                             });
+                if (query.Any())
+                {
+                    return query.Single().nombre; 
+                }
+            }
+            return "";
+        }
     }
 }

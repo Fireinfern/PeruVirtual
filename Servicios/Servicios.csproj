@@ -73,6 +73,10 @@
       <Project>{c64ac895-c498-4d51-9b7b-a8b0aa6f68f5}</Project>
       <Name>ModeloNegocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{9ee78447-35b0-45c9-b85a-86fb36338a87}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

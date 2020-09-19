@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.UsernameTxt = new System.Windows.Forms.TextBox();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.MinimizeBtn = new System.Windows.Forms.Button();
             this.PasswordTxt = new System.Windows.Forms.TextBox();
-            this.TitleLbl = new System.Windows.Forms.Label();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.RegistroLnk = new System.Windows.Forms.LinkLabel();
             this.TopPanel = new System.Windows.Forms.Panel();
@@ -55,16 +56,24 @@
             this.usernameRegLbl = new System.Windows.Forms.Label();
             this.RegUsernameTxt = new System.Windows.Forms.TextBox();
             this.TitleRegistroLbl = new System.Windows.Forms.Label();
+            this.ConfirmationPanel = new System.Windows.Forms.Panel();
+            this.FacebookBrowser = new System.Windows.Forms.WebBrowser();
+            this.CodigoLbl = new System.Windows.Forms.Label();
+            this.CancelFacebookBtn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel.SuspendLayout();
             this.LoginPanel.SuspendLayout();
             this.RegistroPanel.SuspendLayout();
+            this.ConfirmationPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // UsernameTxt
             // 
             this.UsernameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameTxt.Location = new System.Drawing.Point(285, 117);
+            this.UsernameTxt.Location = new System.Drawing.Point(538, 217);
             this.UsernameTxt.Name = "UsernameTxt";
             this.UsernameTxt.Size = new System.Drawing.Size(226, 31);
             this.UsernameTxt.TabIndex = 0;
@@ -101,30 +110,19 @@
             // 
             this.PasswordTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTxt.Location = new System.Drawing.Point(285, 163);
+            this.PasswordTxt.Location = new System.Drawing.Point(538, 263);
             this.PasswordTxt.Name = "PasswordTxt";
             this.PasswordTxt.PasswordChar = '●';
             this.PasswordTxt.Size = new System.Drawing.Size(226, 31);
             this.PasswordTxt.TabIndex = 3;
             // 
-            // TitleLbl
-            // 
-            this.TitleLbl.AutoSize = true;
-            this.TitleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLbl.Location = new System.Drawing.Point(283, 33);
-            this.TitleLbl.Name = "TitleLbl";
-            this.TitleLbl.Size = new System.Drawing.Size(228, 46);
-            this.TitleLbl.TabIndex = 4;
-            this.TitleLbl.Text = "Peru Virtual";
-            this.TitleLbl.Click += new System.EventHandler(this.TitleLbl_Click);
-            // 
             // LoginBtn
             // 
-            this.LoginBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.LoginBtn.BackColor = System.Drawing.Color.Transparent;
             this.LoginBtn.FlatAppearance.BorderSize = 0;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginBtn.Location = new System.Drawing.Point(285, 213);
+            this.LoginBtn.Location = new System.Drawing.Point(538, 313);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(226, 31);
             this.LoginBtn.TabIndex = 5;
@@ -134,8 +132,11 @@
             // 
             // RegistroLnk
             // 
+            this.RegistroLnk.ActiveLinkColor = System.Drawing.Color.Maroon;
             this.RegistroLnk.AutoSize = true;
-            this.RegistroLnk.Location = new System.Drawing.Point(288, 197);
+            this.RegistroLnk.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.RegistroLnk.LinkColor = System.Drawing.Color.Silver;
+            this.RegistroLnk.Location = new System.Drawing.Point(685, 297);
             this.RegistroLnk.Name = "RegistroLnk";
             this.RegistroLnk.Size = new System.Drawing.Size(79, 13);
             this.RegistroLnk.TabIndex = 6;
@@ -146,6 +147,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.Maroon;
+            this.TopPanel.Controls.Add(this.pictureBox1);
             this.TopPanel.Controls.Add(this.WindowNameLbl);
             this.TopPanel.Controls.Add(this.MinimizeBtn);
             this.TopPanel.Controls.Add(this.CloseBtn);
@@ -159,7 +161,8 @@
             // WindowNameLbl
             // 
             this.WindowNameLbl.AutoSize = true;
-            this.WindowNameLbl.Location = new System.Drawing.Point(12, 8);
+            this.WindowNameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.WindowNameLbl.Location = new System.Drawing.Point(35, 8);
             this.WindowNameLbl.Name = "WindowNameLbl";
             this.WindowNameLbl.Size = new System.Drawing.Size(93, 13);
             this.WindowNameLbl.TabIndex = 3;
@@ -168,25 +171,24 @@
             // 
             // LoginPanel
             // 
+            this.LoginPanel.BackColor = System.Drawing.Color.Transparent;
             this.LoginPanel.Controls.Add(this.FacebookLogin);
-            this.LoginPanel.Controls.Add(this.TitleLbl);
             this.LoginPanel.Controls.Add(this.UsernameTxt);
             this.LoginPanel.Controls.Add(this.LoginBtn);
             this.LoginPanel.Controls.Add(this.RegistroLnk);
             this.LoginPanel.Controls.Add(this.PasswordTxt);
-            this.LoginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoginPanel.Location = new System.Drawing.Point(0, 28);
+            this.LoginPanel.Location = new System.Drawing.Point(0, 389);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(800, 422);
+            this.LoginPanel.Size = new System.Drawing.Size(480, 61);
             this.LoginPanel.TabIndex = 8;
             // 
             // FacebookLogin
             // 
-            this.FacebookLogin.BackColor = System.Drawing.Color.DarkRed;
+            this.FacebookLogin.BackColor = System.Drawing.Color.Transparent;
             this.FacebookLogin.FlatAppearance.BorderSize = 0;
             this.FacebookLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FacebookLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacebookLogin.Location = new System.Drawing.Point(285, 250);
+            this.FacebookLogin.Location = new System.Drawing.Point(538, 350);
             this.FacebookLogin.Name = "FacebookLogin";
             this.FacebookLogin.Size = new System.Drawing.Size(226, 31);
             this.FacebookLogin.TabIndex = 7;
@@ -196,6 +198,7 @@
             // 
             // RegistroPanel
             // 
+            this.RegistroPanel.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.RegistroPanel.Controls.Add(this.TerminosCondicionesCbx);
             this.RegistroPanel.Controls.Add(this.ErrorRegLbl);
             this.RegistroPanel.Controls.Add(this.CancelRegBtn);
@@ -368,17 +371,81 @@
             this.TitleRegistroLbl.Text = "Registro";
             this.TitleRegistroLbl.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // Form1
+            // ConfirmationPanel
+            // 
+            this.ConfirmationPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ConfirmationPanel.Controls.Add(this.CancelFacebookBtn);
+            this.ConfirmationPanel.Controls.Add(this.CodigoLbl);
+            this.ConfirmationPanel.Controls.Add(this.FacebookBrowser);
+            this.ConfirmationPanel.Location = new System.Drawing.Point(790, 300);
+            this.ConfirmationPanel.Name = "ConfirmationPanel";
+            this.ConfirmationPanel.Size = new System.Drawing.Size(10, 150);
+            this.ConfirmationPanel.TabIndex = 9;
+            this.ConfirmationPanel.Visible = false;
+            // 
+            // FacebookBrowser
+            // 
+            this.FacebookBrowser.Location = new System.Drawing.Point(0, 0);
+            this.FacebookBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.FacebookBrowser.Name = "FacebookBrowser";
+            this.FacebookBrowser.Size = new System.Drawing.Size(800, 391);
+            this.FacebookBrowser.TabIndex = 0;
+            this.FacebookBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.FacebookBrowser_Navigated);
+            // 
+            // CodigoLbl
+            // 
+            this.CodigoLbl.AutoSize = true;
+            this.CodigoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodigoLbl.Location = new System.Drawing.Point(327, 550);
+            this.CodigoLbl.Name = "CodigoLbl";
+            this.CodigoLbl.Size = new System.Drawing.Size(77, 17);
+            this.CodigoLbl.TabIndex = 1;
+            this.CodigoLbl.Text = "Tu Codigo:";
+            // 
+            // CancelFacebookBtn
+            // 
+            this.CancelFacebookBtn.FlatAppearance.BorderSize = 0;
+            this.CancelFacebookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelFacebookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelFacebookBtn.Location = new System.Drawing.Point(722, 550);
+            this.CancelFacebookBtn.Name = "CancelFacebookBtn";
+            this.CancelFacebookBtn.Size = new System.Drawing.Size(75, 23);
+            this.CancelFacebookBtn.TabIndex = 2;
+            this.CancelFacebookBtn.Text = "Cancelar";
+            this.CancelFacebookBtn.UseVisualStyleBackColor = true;
+            this.CancelFacebookBtn.Click += new System.EventHandler(this.CancelFacebookBtn_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 15000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ConfirmationPanel);
             this.Controls.Add(this.RegistroPanel);
             this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.TopPanel);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Login";
             this.Text = "PeruVirtual";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -388,6 +455,9 @@
             this.LoginPanel.PerformLayout();
             this.RegistroPanel.ResumeLayout(false);
             this.RegistroPanel.PerformLayout();
+            this.ConfirmationPanel.ResumeLayout(false);
+            this.ConfirmationPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,7 +468,6 @@
         private System.Windows.Forms.Button CloseBtn;
         private System.Windows.Forms.Button MinimizeBtn;
         private System.Windows.Forms.TextBox PasswordTxt;
-        private System.Windows.Forms.Label TitleLbl;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.LinkLabel RegistroLnk;
         private System.Windows.Forms.Panel TopPanel;
@@ -421,6 +490,12 @@
         private System.Windows.Forms.Label ErrorRegLbl;
         private System.Windows.Forms.CheckBox TerminosCondicionesCbx;
         private System.Windows.Forms.Button FacebookLogin;
+        private System.Windows.Forms.Panel ConfirmationPanel;
+        private System.Windows.Forms.WebBrowser FacebookBrowser;
+        private System.Windows.Forms.Button CancelFacebookBtn;
+        private System.Windows.Forms.Label CodigoLbl;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
