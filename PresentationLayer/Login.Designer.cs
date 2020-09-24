@@ -63,11 +63,13 @@
             this.FacebookBrowser = new System.Windows.Forms.WebBrowser();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MainContainer = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LoginPanel.SuspendLayout();
             this.RegistroPanel.SuspendLayout();
             this.ConfirmationPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // UsernameTxt
@@ -183,22 +185,26 @@
             // LoginPanel
             // 
             this.LoginPanel.BackColor = System.Drawing.Color.Transparent;
+            this.LoginPanel.Controls.Add(this.pictureBox2);
             this.LoginPanel.Controls.Add(this.FacebookLogin);
             this.LoginPanel.Controls.Add(this.UsernameTxt);
             this.LoginPanel.Controls.Add(this.LoginBtn);
             this.LoginPanel.Controls.Add(this.RegistroLnk);
             this.LoginPanel.Controls.Add(this.PasswordTxt);
-            this.LoginPanel.Location = new System.Drawing.Point(0, 389);
+            this.LoginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoginPanel.Location = new System.Drawing.Point(0, 28);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(480, 61);
+            this.LoginPanel.Size = new System.Drawing.Size(800, 422);
             this.LoginPanel.TabIndex = 8;
             // 
             // FacebookLogin
             // 
-            this.FacebookLogin.BackColor = System.Drawing.Color.Transparent;
+            this.FacebookLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
             this.FacebookLogin.FlatAppearance.BorderSize = 0;
             this.FacebookLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FacebookLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FacebookLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.FacebookLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.FacebookLogin.Location = new System.Drawing.Point(538, 350);
             this.FacebookLogin.Name = "FacebookLogin";
             this.FacebookLogin.Size = new System.Drawing.Size(226, 31);
@@ -440,6 +446,17 @@
             this.MainContainer.TabIndex = 10;
             this.MainContainer.Visible = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(538, 350);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,6 +486,7 @@
             this.RegistroPanel.PerformLayout();
             this.ConfirmationPanel.ResumeLayout(false);
             this.ConfirmationPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,6 +526,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel MainContainer;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
