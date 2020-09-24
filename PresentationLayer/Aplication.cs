@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace PresentationLayer
 {
@@ -18,7 +21,6 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
-
         private void selectImage() {
             switch (this.destinos[this.currentDestination])
             {
@@ -35,7 +37,14 @@ namespace PresentationLayer
 
         private void IniciarTourBtn_Click(object sender, EventArgs e)
         {
+            // TODO implementar ambos tours en la vista del forms
+            // Cambiar direccion al exe generado por el Build
+            Process p = Process.Start("D:\\Programacion\\Unity\\VR\\Build\\TheRealCaral.exe");
+            p.WaitForInputIdle();
 
+            //TourPanel.Visible = true;
+            //TourPanel.Dock = DockStyle.Fill;
+            //SetParent(p.MainWindowHandle, this.TourPanel.Handle);
         }
 
         private void Aplication_Load(object sender, EventArgs e)

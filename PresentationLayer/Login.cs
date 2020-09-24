@@ -28,6 +28,8 @@ namespace PresentationLayer
         private VO.Autho autho = new VO.Autho();
         private VO.FacebookUser facebookUser = new VO.FacebookUser();
         public VO.Session session;
+        
+        //private Bitmap bg = new Bitmap("./Assets/BG_slide.jpg"); 
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -40,6 +42,7 @@ namespace PresentationLayer
         
         private void openMainForm(object form)
         {
+            this.BackgroundImage = Properties.Resources.BG_slide;
             LoginPanel.Visible = false;
             ConfirmationPanel.Visible = false;
             MainContainer.Visible = true;
@@ -237,6 +240,7 @@ namespace PresentationLayer
                 this.facebookUser=await facebookLogin.getUser(autho.access_token);
                 session = new VO.Session(facebookUser.name, facebookUser.email);
                 Console.WriteLine(session.Nombre + " " + session.Email);
+                openMainForm(new Aplication());
             }
         }
     }

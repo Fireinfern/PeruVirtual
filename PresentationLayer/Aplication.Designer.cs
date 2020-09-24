@@ -31,13 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Aplication));
             this.ForwardButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.InformacionBtn = new System.Windows.Forms.Button();
             this.IniciarTourBtn = new System.Windows.Forms.Button();
             this.CaralPicture = new System.Windows.Forms.PictureBox();
             this.NameTitleLbl = new System.Windows.Forms.Label();
-            this.InformacionBtn = new System.Windows.Forms.Button();
             this.MachuPicchuImage = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.TourPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.CaralPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MachuPicchuImage)).BeginInit();
             this.SuspendLayout();
@@ -60,23 +59,28 @@
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // panel1
+            // InformacionBtn
             // 
-            this.panel1.Controls.Add(this.InformacionBtn);
-            this.panel1.Controls.Add(this.IniciarTourBtn);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.InformacionBtn.BackColor = System.Drawing.Color.Transparent;
+            this.InformacionBtn.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.InformacionBtn, "InformacionBtn");
+            this.InformacionBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.InformacionBtn.Name = "InformacionBtn";
+            this.InformacionBtn.UseVisualStyleBackColor = false;
             // 
             // IniciarTourBtn
             // 
+            this.IniciarTourBtn.BackColor = System.Drawing.Color.Transparent;
             this.IniciarTourBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.IniciarTourBtn, "IniciarTourBtn");
+            this.IniciarTourBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.IniciarTourBtn.Name = "IniciarTourBtn";
-            this.IniciarTourBtn.UseVisualStyleBackColor = true;
+            this.IniciarTourBtn.UseVisualStyleBackColor = false;
             this.IniciarTourBtn.Click += new System.EventHandler(this.IniciarTourBtn_Click);
             // 
             // CaralPicture
             // 
+            this.CaralPicture.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.CaralPicture, "CaralPicture");
             this.CaralPicture.Name = "CaralPicture";
             this.CaralPicture.TabStop = false;
@@ -84,20 +88,21 @@
             // NameTitleLbl
             // 
             resources.ApplyResources(this.NameTitleLbl, "NameTitleLbl");
+            this.NameTitleLbl.BackColor = System.Drawing.Color.Transparent;
+            this.NameTitleLbl.ForeColor = System.Drawing.Color.Snow;
             this.NameTitleLbl.Name = "NameTitleLbl";
-            // 
-            // InformacionBtn
-            // 
-            this.InformacionBtn.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.InformacionBtn, "InformacionBtn");
-            this.InformacionBtn.Name = "InformacionBtn";
-            this.InformacionBtn.UseVisualStyleBackColor = true;
             // 
             // MachuPicchuImage
             // 
+            this.MachuPicchuImage.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.MachuPicchuImage, "MachuPicchuImage");
             this.MachuPicchuImage.Name = "MachuPicchuImage";
             this.MachuPicchuImage.TabStop = false;
+            // 
+            // TourPanel
+            // 
+            resources.ApplyResources(this.TourPanel, "TourPanel");
+            this.TourPanel.Name = "TourPanel";
             // 
             // Aplication
             // 
@@ -105,17 +110,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ControlBox = false;
+            this.Controls.Add(this.InformacionBtn);
+            this.Controls.Add(this.TourPanel);
+            this.Controls.Add(this.IniciarTourBtn);
             this.Controls.Add(this.MachuPicchuImage);
             this.Controls.Add(this.NameTitleLbl);
             this.Controls.Add(this.CaralPicture);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.ForwardButton);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Aplication";
             this.Load += new System.EventHandler(this.Aplication_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CaralPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MachuPicchuImage)).EndInit();
             this.ResumeLayout(false);
@@ -127,11 +133,11 @@
 
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button IniciarTourBtn;
         private System.Windows.Forms.PictureBox CaralPicture;
         private System.Windows.Forms.Label NameTitleLbl;
         private System.Windows.Forms.Button InformacionBtn;
         private System.Windows.Forms.PictureBox MachuPicchuImage;
+        private System.Windows.Forms.Panel TourPanel;
     }
 }
