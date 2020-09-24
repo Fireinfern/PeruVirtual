@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autho.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="Code.cs" />
     <Compile Include="FacebookUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

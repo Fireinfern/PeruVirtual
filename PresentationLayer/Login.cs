@@ -27,6 +27,7 @@ namespace PresentationLayer
         private VO.Code code = new VO.Code();
         private VO.Autho autho = new VO.Autho();
         private VO.FacebookUser facebookUser = new VO.FacebookUser();
+        public VO.Session session;
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -35,6 +36,24 @@ namespace PresentationLayer
         public Login()
         {
             InitializeComponent();
+        }
+        
+        private void openMainForm(object form)
+        {
+            LoginPanel.Visible = false;
+            ConfirmationPanel.Visible = false;
+            MainContainer.Visible = true;
+            MainContainer.Dock = DockStyle.Fill;
+            if (this.MainContainer.Controls.Count > 0)
+            {
+                this.MainContainer.Controls.RemoveAt(0);
+            }
+            Form f = form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.MainContainer.Controls.Add(f);
+            this.MainContainer.Tag = f;
+            f.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,8 +99,17 @@ namespace PresentationLayer
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            var nombre=this.clienteService.getClient(this.usuarioService.AccesClient(UsernameTxt.Text, PasswordTxt.Text));
-            MessageBox.Show("Bienvenido " + nombre, "Bienvenido", MessageBoxButtons.OK);
+            var clienteSession=this.clienteService.getClient(this.usuarioService.AccesClient(UsernameTxt.Text, PasswordTxt.Text));
+            if(clienteSession != null)
+            {
+                session = new VO.Session(clienteSession.nombre, clienteSession.correo);
+                //MessageBox.Show("Bienvenido " + session.Nombre, "Bienvenido", MessageBoxButtons.OK);
+                openMainForm(new Aplication());
+            }
+            else
+            {
+                MessageBox.Show("usuario o contraseña erroneos","Error" ,MessageBoxButtons.OK);
+            }
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -207,8 +235,8 @@ namespace PresentationLayer
                 timer1.Stop();
                 timer1.Enabled = false;
                 this.facebookUser=await facebookLogin.getUser(autho.access_token);
-                Console.WriteLine(facebookUser.name);
-                MessageBox.Show("Bienvenido " + facebookUser.name, "Bienvenido", MessageBoxButtons.OK);
+                session = new VO.Session(facebookUser.name, facebookUser.email);
+                Console.WriteLine(session.Nombre + " " + session.Email);
             }
         }
     }

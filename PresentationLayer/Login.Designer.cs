@@ -37,6 +37,7 @@
             this.LoginBtn = new System.Windows.Forms.Button();
             this.RegistroLnk = new System.Windows.Forms.LinkLabel();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.WindowNameLbl = new System.Windows.Forms.Label();
             this.LoginPanel = new System.Windows.Forms.Panel();
             this.FacebookLogin = new System.Windows.Forms.Button();
@@ -57,16 +58,16 @@
             this.RegUsernameTxt = new System.Windows.Forms.TextBox();
             this.TitleRegistroLbl = new System.Windows.Forms.Label();
             this.ConfirmationPanel = new System.Windows.Forms.Panel();
-            this.FacebookBrowser = new System.Windows.Forms.WebBrowser();
-            this.CodigoLbl = new System.Windows.Forms.Label();
             this.CancelFacebookBtn = new System.Windows.Forms.Button();
+            this.CodigoLbl = new System.Windows.Forms.Label();
+            this.FacebookBrowser = new System.Windows.Forms.WebBrowser();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MainContainer = new System.Windows.Forms.Panel();
             this.TopPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LoginPanel.SuspendLayout();
             this.RegistroPanel.SuspendLayout();
             this.ConfirmationPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // UsernameTxt
@@ -146,7 +147,7 @@
             // 
             // TopPanel
             // 
-            this.TopPanel.BackColor = System.Drawing.Color.Maroon;
+            this.TopPanel.BackColor = System.Drawing.Color.Transparent;
             this.TopPanel.Controls.Add(this.pictureBox1);
             this.TopPanel.Controls.Add(this.WindowNameLbl);
             this.TopPanel.Controls.Add(this.MinimizeBtn);
@@ -157,6 +158,16 @@
             this.TopPanel.Size = new System.Drawing.Size(800, 28);
             this.TopPanel.TabIndex = 7;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // WindowNameLbl
             // 
@@ -383,25 +394,6 @@
             this.ConfirmationPanel.TabIndex = 9;
             this.ConfirmationPanel.Visible = false;
             // 
-            // FacebookBrowser
-            // 
-            this.FacebookBrowser.Location = new System.Drawing.Point(0, 0);
-            this.FacebookBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.FacebookBrowser.Name = "FacebookBrowser";
-            this.FacebookBrowser.Size = new System.Drawing.Size(800, 391);
-            this.FacebookBrowser.TabIndex = 0;
-            this.FacebookBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.FacebookBrowser_Navigated);
-            // 
-            // CodigoLbl
-            // 
-            this.CodigoLbl.AutoSize = true;
-            this.CodigoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodigoLbl.Location = new System.Drawing.Point(327, 550);
-            this.CodigoLbl.Name = "CodigoLbl";
-            this.CodigoLbl.Size = new System.Drawing.Size(77, 17);
-            this.CodigoLbl.TabIndex = 1;
-            this.CodigoLbl.Text = "Tu Codigo:";
-            // 
             // CancelFacebookBtn
             // 
             this.CancelFacebookBtn.FlatAppearance.BorderSize = 0;
@@ -415,20 +407,38 @@
             this.CancelFacebookBtn.UseVisualStyleBackColor = true;
             this.CancelFacebookBtn.Click += new System.EventHandler(this.CancelFacebookBtn_Click);
             // 
+            // CodigoLbl
+            // 
+            this.CodigoLbl.AutoSize = true;
+            this.CodigoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodigoLbl.Location = new System.Drawing.Point(327, 550);
+            this.CodigoLbl.Name = "CodigoLbl";
+            this.CodigoLbl.Size = new System.Drawing.Size(77, 17);
+            this.CodigoLbl.TabIndex = 1;
+            this.CodigoLbl.Text = "Tu Codigo:";
+            // 
+            // FacebookBrowser
+            // 
+            this.FacebookBrowser.Location = new System.Drawing.Point(0, 0);
+            this.FacebookBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.FacebookBrowser.Name = "FacebookBrowser";
+            this.FacebookBrowser.Size = new System.Drawing.Size(800, 391);
+            this.FacebookBrowser.TabIndex = 0;
+            this.FacebookBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.FacebookBrowser_Navigated);
+            // 
             // timer1
             // 
             this.timer1.Interval = 15000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
+            // MainContainer
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.MainContainer.BackColor = System.Drawing.Color.Transparent;
+            this.MainContainer.Location = new System.Drawing.Point(0, 0);
+            this.MainContainer.Name = "MainContainer";
+            this.MainContainer.Size = new System.Drawing.Size(200, 100);
+            this.MainContainer.TabIndex = 10;
+            this.MainContainer.Visible = false;
             // 
             // Login
             // 
@@ -438,6 +448,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.MainContainer);
             this.Controls.Add(this.ConfirmationPanel);
             this.Controls.Add(this.RegistroPanel);
             this.Controls.Add(this.LoginPanel);
@@ -451,13 +462,13 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.RegistroPanel.ResumeLayout(false);
             this.RegistroPanel.PerformLayout();
             this.ConfirmationPanel.ResumeLayout(false);
             this.ConfirmationPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -496,6 +507,7 @@
         private System.Windows.Forms.Label CodigoLbl;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel MainContainer;
     }
 }
 
