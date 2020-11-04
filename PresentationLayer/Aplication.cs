@@ -75,5 +75,10 @@ namespace PresentationLayer
             NameTitleLbl.Text = this.destinos[this.currentDestination];
             selectImage();
         }
+
+        private void InformacionBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

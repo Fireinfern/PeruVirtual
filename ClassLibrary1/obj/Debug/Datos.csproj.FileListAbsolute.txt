@@ -10,3 +10,15 @@ D:\Programacion\C#\PeruVirtual\ClassLibrary1\obj\Debug\Datos.csproj.CoreCompileI
 D:\Programacion\C#\PeruVirtual\ClassLibrary1\obj\Debug\Datos.csproj.CopyComplete
 D:\Programacion\C#\PeruVirtual\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 D:\Programacion\C#\PeruVirtual\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\bin\Debug\EntityFramework.dll
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\bin\Debug\EntityFramework.xml
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

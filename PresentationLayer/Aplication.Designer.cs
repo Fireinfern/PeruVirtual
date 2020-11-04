@@ -67,6 +67,7 @@
             this.InformacionBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.InformacionBtn.Name = "InformacionBtn";
             this.InformacionBtn.UseVisualStyleBackColor = false;
+            this.InformacionBtn.Click += new System.EventHandler(this.InformacionBtn_Click);
             // 
             // IniciarTourBtn
             // 
