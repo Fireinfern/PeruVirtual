@@ -121,7 +121,7 @@
             // 
             // LoginBtn
             // 
-            this.LoginBtn.BackColor = System.Drawing.Color.Transparent;
+            this.LoginBtn.BackColor = System.Drawing.Color.White;
             this.LoginBtn.FlatAppearance.BorderSize = 0;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

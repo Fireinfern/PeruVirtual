@@ -1,18 +1,10 @@
 ﻿using PresentationLayer.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Diagnostics;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Drawing.Configuration;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
+using System.Windows.Forms;
 
 namespace PresentationLayer
 {
@@ -227,24 +219,7 @@ namespace PresentationLayer
         //----------------------------------------------------------//
 
 
-        //-----------------------Boton Explorar----------------------//
-        private void Explorar_Click(object sender, EventArgs e)
-        {
-            Process p;
-            switch (Selected)
-            {
-                case "Machu Picchu":
-                    p = Process.Start(DirPath + @"\Lugares\MachuPicchu\MachuPicchu.exe");
-                    p.WaitForInputIdle();
-                    break;
-                case "Caral": break;
-                case "Sacsayhuaman": break;
-                case "Nazca": break;
-                case "Chavin": break;
-                default: break;
-            }
-        }
-        //----------------------------------------------------------//
+
         private void Resize()
         {
             PanelOpciones.Height = this.Height/6;
@@ -329,7 +304,7 @@ namespace PresentationLayer
         {
             return;
         }
-
+        //-----------------------Boton Explorar----------------------/
         private void Explorar(object sender, EventArgs e)
         {
             Process p;
@@ -342,10 +317,11 @@ namespace PresentationLayer
                 case "Caral": MessageBox.Show("Sin implementar"); break;
                 case "Sacsayhuaman": MessageBox.Show("Sin implementar"); break;
                 case "Nazca": MessageBox.Show("Sin implementar"); break;
-                case "Chavin": MessageBox.Show("Sin implementar"); break;
+                case "Paracas": MessageBox.Show("Sin implementar"); break;
                 default: break;
             }
         }
+        //----------------------------------------------------------//
     }
     class RoundedButton : Button
     {

@@ -240,7 +240,10 @@ namespace PresentationLayer
                 this.facebookUser=await facebookLogin.getUser(autho.access_token);
                 session = new VO.Session(facebookUser.name, facebookUser.email);
                 Console.WriteLine(session.Nombre + " " + session.Email);
-                openMainForm(new Aplication());
+                this.Hide();
+                //openMainForm(new Main());
+                Main main = new Main();
+                main.Show();
             }
         }
 
