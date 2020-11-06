@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Utilities.BunifuUserControl.Transitions;
 
 namespace PresentationLayer
 {
@@ -225,8 +224,7 @@ namespace PresentationLayer
 
         private void FacebookBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            
-
+           
         }
 
         private async void timer1_Tick(object sender, EventArgs e)

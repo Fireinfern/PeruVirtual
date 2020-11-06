@@ -110,7 +110,7 @@ namespace PresentationLayer
         {
             if (Selected == "Machu Picchu") return;
             LblTitulo.Text = "Machu Picchu";
-            VideoPlayer.URL = @"C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\Videos\MachuPicchu.mp4";
+            VideoPlayer.URL = DirPath + @"\Videos\MachuPicchu.mp4";
             Selected = "Machu Picchu";
             if (MachuPicchu.BorderStyle == BorderStyle.None)
             {
@@ -133,7 +133,7 @@ namespace PresentationLayer
         {
             if (Selected == "Caral") return;
             LblTitulo.Text = "Caral";
-            VideoPlayer.URL = @"C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\Videos\Caral.mp4";
+            VideoPlayer.URL = DirPath + @"\Videos\Caral.mp4";
             Selected = "Caral";
             if (Caral.BorderStyle == BorderStyle.None)
             {
@@ -155,7 +155,7 @@ namespace PresentationLayer
         {
             if (Selected == "Sacsayhuaman") return;
             LblTitulo.Text = "Sacsayhuaman";
-            VideoPlayer.URL = @"C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\Videos\Sacsayhuaman.mp4";
+            VideoPlayer.URL = DirPath + @"\Videos\Sacsayhuaman.mp4";
             Selected = "Sacsayhuaman";
             if (Sacsayhuaman.BorderStyle == BorderStyle.None)
             {
@@ -176,7 +176,7 @@ namespace PresentationLayer
         {
             if (Selected == "Nazca") return;
             LblTitulo.Text = "Nazca";
-            VideoPlayer.URL = @"C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\Videos\Nazca.mp4";
+            VideoPlayer.URL = DirPath + @"\Videos\Nazca.mp4";
             Selected = "Nazca";
             if (Nazca.BorderStyle == BorderStyle.None)
             {
@@ -199,7 +199,7 @@ namespace PresentationLayer
         {
             if (Selected == "Paracas") return;
             LblTitulo.Text = "Paracas";
-            VideoPlayer.URL = @"C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\Videos\Paracas.mp4";
+            VideoPlayer.URL = DirPath + @"\Videos\Paracas.mp4";
             Selected = "Paracas";
             if (Sacsayhuaman.BorderStyle == BorderStyle.None)
             {
