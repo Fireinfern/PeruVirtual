@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,6 +10,55 @@ namespace Servicios
 {
     public class UsuarioService
     {
+        UsuarioRepository usuarioRep = new UsuarioRepository();
+        public bool Login(String username, String contrasena)
+        {
+            
+            var users = usuarioRep.GetUsuarios();
+            string passEncrypt = Encriptar(contrasena);
+
+            foreach(var u in users)
+            {
+                if (u.username + u.contrasena == username + passEncrypt)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Registro(usuario user)
+        {
+           return usuarioRep.InsertarUsuario(user);
+        }
+
+        /// Esta función desencripta la cadena que le envíamos en el parámentro de entrada.
+        public string DesEncriptar(string _cadenaAdesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
+        public string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
+        }
+
+        /*static void Main(string[] args)
+        {
+            UsuarioRepository usuarioRep = new UsuarioRepository();
+            var users = usuarioRep.GetUsuarios();
+
+            Console.WriteLine(users.ToString());
+            Console.ReadKey();
+        }*/
+
+        /*
         public int AccesClient(string nombreUsuario, string contrasenia)
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
@@ -27,6 +77,7 @@ namespace Servicios
             }
             return 0;
         }
+
         public void CreateUser(int idcliente, string nombreUsuario, string contrasenia)
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
@@ -40,5 +91,6 @@ namespace Servicios
                 db.SaveChanges();
             }
         }
+        */
     }
 }

@@ -19,12 +19,19 @@ namespace PresentationLayer
         public static extern bool ReleaseCapture();
         //-----------------------------------------------------------//
 
+        //DEV
         public string DirPath = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
+
+
+        //Prod
+        //public string DirPath = Environment.CurrentDirectory;
 
 
         public string Selected = "Machu Picchu";
 
         RoundedButton Button_Explorar2 = new RoundedButton();
+
+
         public Main()
         {
             InitializeComponent();
@@ -42,7 +49,7 @@ namespace PresentationLayer
             Button_Explorar2.Anchor = Button_Explorar.Anchor;
             Button_Explorar2.BackgroundImage = Button_Explorar.BackgroundImage;
             Button_Explorar2.BackgroundImageLayout = Button_Explorar.BackgroundImageLayout;
-            Button_Explorar2.MouseClick += Explorar;
+            Button_Explorar2.MouseClick += Opciones_Antiguo_Nuevo;
             Button_Explorar2.FlatStyle = FlatStyle.Flat;
             Resize();
             Button_Explorar.Visible = false;
@@ -71,9 +78,7 @@ namespace PresentationLayer
             Restaurar.Visible = true;
             Maximizar.Visible = false;
             WindowState = FormWindowState.Maximized;
-            Resize();
-
-
+            //Resize();
         }
         private void TaskPanel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -194,7 +199,7 @@ namespace PresentationLayer
             }
 
         }
-
+        
         private void Paracas_Click(object sender, EventArgs e)
         {
             if (Selected == "Paracas") return;
@@ -254,7 +259,6 @@ namespace PresentationLayer
             MachuPicchu.Image = Resources.MacchuPicchu;
         }
 
-
         private void Caral_MouseEnter(object sender, EventArgs e)
         {
             Caral.Image = Resources.CaralSelected;
@@ -264,8 +268,6 @@ namespace PresentationLayer
         {
             Caral.Image = Resources.Caral;
         }
-
- 
 
         private void Nazca_MouseEnter(object sender, EventArgs e)
         {
@@ -314,7 +316,10 @@ namespace PresentationLayer
                     p = Process.Start(DirPath + @"\Lugares\MachuPicchu\MachuPicchu.exe");
                     p.WaitForInputIdle();
                     break;
-                case "Caral": MessageBox.Show("Sin implementar"); break;
+                case "Caral":
+                    p = Process.Start(DirPath + @"\Lugares\Caral\TheRealCaral.exe");
+                    p.WaitForInputIdle();
+                    break; 
                 case "Sacsayhuaman": MessageBox.Show("Sin implementar"); break;
                 case "Nazca": MessageBox.Show("Sin implementar"); break;
                 case "Paracas": MessageBox.Show("Sin implementar"); break;
@@ -322,6 +327,16 @@ namespace PresentationLayer
             }
         }
         //----------------------------------------------------------//
+        //-------------------------Boton Antiguo-Nuevo--------------------//
+        private void Opciones_Antiguo_Nuevo(object sender, EventArgs e)
+        {
+            Opciones opciones = new Opciones();
+
+            opciones.Selected = Selected;
+            //opciones.setSeleccionado(Selected);
+            opciones.StartPosition = FormStartPosition.CenterParent;
+            opciones.ShowDialog();
+        }
     }
     class RoundedButton : Button
     {

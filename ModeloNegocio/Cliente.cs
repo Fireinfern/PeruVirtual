@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace ModeloNegocio
 {
     public class Cliente{
+
+
+        /*
         public List<ClassLibrary1.cliente> GetClientes()
         {
             using (ClassLibrary1.PeruVirtualEntities db = new ClassLibrary1.PeruVirtualEntities())
@@ -31,5 +34,6 @@ namespace ModeloNegocio
             }
             return false;
         }
+        */
     }
 }

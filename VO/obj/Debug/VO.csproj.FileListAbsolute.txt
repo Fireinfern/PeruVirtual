@@ -11,8 +11,8 @@ C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\bin\Debug\VO.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\bin\Debug\VO.pdb
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\obj\Debug\VO.csprojAssemblyReference.cache
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\obj\Debug\VO.csproj.CoreCompileInputs.cache
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\obj\Debug\VO.csproj.CopyComplete
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\obj\Debug\VO.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\obj\Debug\VO.pdb
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\VO\obj\Debug\VO.csprojAssemblyReference.cache

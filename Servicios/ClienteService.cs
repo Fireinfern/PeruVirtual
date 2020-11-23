@@ -8,6 +8,7 @@ namespace Servicios
 {
     public class ClienteService
     {
+        /*
         private UsuarioService usuarioService = new UsuarioService();
         public void CreateClient(string email, string contrasenia, string nombreUsuario, string nombre)
         {
@@ -40,5 +41,6 @@ namespace Servicios
             }
             return null;
         }
+        */
     }
 }
