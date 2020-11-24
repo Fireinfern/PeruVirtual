@@ -40,8 +40,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRegistrate = new System.Windows.Forms.LinkLabel();
             this.passwordPanel = new System.Windows.Forms.Panel();
+            this.hint_password = new System.Windows.Forms.Label();
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.usernamePanel = new System.Windows.Forms.Panel();
+            this.hint_username = new System.Windows.Forms.Label();
             this.usernameTB = new System.Windows.Forms.TextBox();
             this.FacebookLoginBtn = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
@@ -175,12 +177,26 @@
             // 
             this.passwordPanel.BackColor = System.Drawing.Color.White;
             this.passwordPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.passwordPanel.Controls.Add(this.hint_password);
             this.passwordPanel.Controls.Add(this.passwordTB);
             this.passwordPanel.Location = new System.Drawing.Point(691, 351);
             this.passwordPanel.Name = "passwordPanel";
             this.passwordPanel.Padding = new System.Windows.Forms.Padding(2);
             this.passwordPanel.Size = new System.Drawing.Size(248, 42);
             this.passwordPanel.TabIndex = 10;
+            // 
+            // hint_password
+            // 
+            this.hint_password.AutoSize = true;
+            this.hint_password.BackColor = System.Drawing.Color.Transparent;
+            this.hint_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hint_password.ForeColor = System.Drawing.Color.Silver;
+            this.hint_password.Location = new System.Drawing.Point(18, 9);
+            this.hint_password.Name = "hint_password";
+            this.hint_password.Size = new System.Drawing.Size(103, 22);
+            this.hint_password.TabIndex = 13;
+            this.hint_password.Text = "Contraseña";
+            this.hint_password.Click += new System.EventHandler(this.hint_password_Click);
             // 
             // passwordTB
             // 
@@ -192,17 +208,32 @@
             this.passwordTB.PasswordChar = '*';
             this.passwordTB.Size = new System.Drawing.Size(225, 20);
             this.passwordTB.TabIndex = 0;
+            this.passwordTB.TextChanged += new System.EventHandler(this.passwordTB_TextChanged);
             // 
             // usernamePanel
             // 
             this.usernamePanel.BackColor = System.Drawing.Color.White;
             this.usernamePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.usernamePanel.Controls.Add(this.hint_username);
             this.usernamePanel.Controls.Add(this.usernameTB);
             this.usernamePanel.Location = new System.Drawing.Point(691, 303);
             this.usernamePanel.Name = "usernamePanel";
             this.usernamePanel.Padding = new System.Windows.Forms.Padding(2);
             this.usernamePanel.Size = new System.Drawing.Size(248, 42);
             this.usernamePanel.TabIndex = 9;
+            // 
+            // hint_username
+            // 
+            this.hint_username.AutoSize = true;
+            this.hint_username.BackColor = System.Drawing.Color.Transparent;
+            this.hint_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hint_username.ForeColor = System.Drawing.Color.Silver;
+            this.hint_username.Location = new System.Drawing.Point(15, 9);
+            this.hint_username.Name = "hint_username";
+            this.hint_username.Size = new System.Drawing.Size(165, 22);
+            this.hint_username.TabIndex = 12;
+            this.hint_username.Text = "Nombre de Usuario";
+            this.hint_username.Click += new System.EventHandler(this.hint_username_Click);
             // 
             // usernameTB
             // 
@@ -213,6 +244,7 @@
             this.usernameTB.Name = "usernameTB";
             this.usernameTB.Size = new System.Drawing.Size(222, 20);
             this.usernameTB.TabIndex = 0;
+            this.usernameTB.TextChanged += new System.EventHandler(this.usernameTB_TextChanged);
             // 
             // FacebookLoginBtn
             // 
@@ -249,7 +281,7 @@
             this.timer1.Interval = 4500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Login2
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,7 +291,7 @@
             this.Controls.Add(this.topPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login2";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login2";
             this.topPanel.ResumeLayout(false);
@@ -297,5 +329,7 @@
         private System.Windows.Forms.Panel passwordPanel;
         private System.Windows.Forms.TextBox passwordTB;
         private System.Windows.Forms.LinkLabel lblRegistrate;
+        private System.Windows.Forms.Label hint_username;
+        private System.Windows.Forms.Label hint_password;
     }
 }

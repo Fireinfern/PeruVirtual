@@ -20,12 +20,16 @@ namespace PresentationLayer
         //-----------------------------------------------------------//
 
         //DEV
-        public string DirPath = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
+        //public string DirPath = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
 
 
         //Prod
-        //public string DirPath = Environment.CurrentDirectory;
+        public string DirPath = Environment.CurrentDirectory;
 
+        public  string getDirPath()
+        {
+            return DirPath;
+        }
 
         public string Selected = "Machu Picchu";
 

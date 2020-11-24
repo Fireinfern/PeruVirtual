@@ -35,7 +35,19 @@ namespace PresentationLayer
 
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-            if(tb_contraseña.Text != tb_confimar_contraseña.Text)
+            if (tb_nombre_de_usuario.Text.Length == 0) { lbl_error_nombreusuario.Visible = true; }
+            if (tb_nombre_completo.Text.Length == 0) { lbl_error_nombrecompleto.Visible = true; }
+            if (tb_email.Text.Length == 0) { lbl_error_email.Visible = true; }
+            if (tb_contraseña.Text.Length == 0) { lbl_error_contrasena.Visible = true; }
+            if (tb_confimar_contraseña.Text.Length == 0) { lbl_error_confirmarcontra.Visible = true; }
+
+            if (lbl_error_confirmarcontra.Visible || lbl_error_contrasena.Visible || lbl_error_email.Visible ||
+                lbl_error_nombreusuario.Visible || lbl_error_nombrecompleto.Visible)
+            {
+                return;
+            }
+
+            if (tb_contraseña.Text != tb_confimar_contraseña.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden");
                 return;
@@ -62,6 +74,28 @@ namespace PresentationLayer
             this.Close();
         }
 
+        private void tb_nombre_de_usuario_TextChanged(object sender, EventArgs e)
+        {
+            lbl_error_nombreusuario.Visible = false;
+        }
 
+        private void tb_nombre_completo_TextChanged(object sender, EventArgs e)
+        {
+            lbl_error_nombrecompleto.Visible = false;
+        }
+
+        private void tb_email_TextChanged(object sender, EventArgs e)
+        {
+            lbl_error_email.Visible = false;
+        }
+
+        private void tb_contraseña_TextChanged(object sender, EventArgs e)
+        {
+            lbl_error_contrasena.Visible = false;
+        }
+        private void tb_confimar_contraseña_TextChanged(object sender, EventArgs e)
+        {
+            lbl_error_confirmarcontra.Visible = false;
+        }
     }
 }

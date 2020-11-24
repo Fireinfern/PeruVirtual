@@ -73,6 +73,8 @@ namespace PresentationLayer
             {
                 FacebookLoginBtn.Region = new Region(GraphPath);
             }
+
+
         }
 
         private async void FacebookLoginBtn_Click(object sender, EventArgs e)
@@ -215,6 +217,17 @@ namespace PresentationLayer
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+
+            if(usernameTB.Text.Length == 0)
+            {
+                MessageBox.Show("El nombre de usuario no puede estar vacio");
+                return;
+            }
+            if (passwordTB.Text.Length == 0)
+            {
+                MessageBox.Show("La contraseña no puede estar vacio");
+                return;
+            }
             var login = usuarioService.Login(usernameTB.Text, passwordTB.Text);
 
             if(login)
@@ -226,6 +239,49 @@ namespace PresentationLayer
             else
             {
                 MessageBox.Show("No se encuentra registrado");
+            }
+        }
+
+        private void usernameTB_TextChanged(object sender, EventArgs e)
+        {
+            if(usernameTB.Text.Length == 0)
+            {
+                hint_username.Visible = true;
+            }
+            else
+            {
+                hint_username.Visible = false;
+            }
+        }
+
+        private void passwordTB_TextChanged(object sender, EventArgs e)
+        {
+            if (passwordTB.Text.Length == 0)
+            {
+                hint_password.Visible = true;
+            }
+            else
+            {
+                hint_password.Visible = false;
+            }
+        }
+
+        private void hint_password_Click(object sender, EventArgs e)
+        {
+            hint_password.Visible = false;
+            ActiveControl = passwordTB;
+            if (usernameTB.Text.Length == 0)
+            {
+                hint_username.Visible = true;
+            }
+        }
+
+        private void hint_username_Click(object sender, EventArgs e)
+        {
+            hint_username.Visible = false;
+            ActiveControl = usernameTB;
+            if (passwordTB.Text.Length == 0) {
+                hint_password.Visible = true;
             }
         }
     }

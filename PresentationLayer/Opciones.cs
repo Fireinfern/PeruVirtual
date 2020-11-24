@@ -16,8 +16,11 @@ namespace PresentationLayer
     {
 
         public string Selected = "";
+
+
         //DEV
         //public string DirPath = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
+
 
         //Prod
         public string DirPath = Environment.CurrentDirectory;

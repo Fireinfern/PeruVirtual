@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_error_nombreusuario = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Salir = new System.Windows.Forms.PictureBox();
+            this.lbl_error_nombrecompleto = new System.Windows.Forms.Label();
+            this.lbl_error_email = new System.Windows.Forms.Label();
+            this.lbl_error_contrasena = new System.Windows.Forms.Label();
+            this.lbl_error_confirmarcontra = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Salir)).BeginInit();
@@ -54,6 +59,11 @@
             // 
             this.panel1.BackgroundImage = global::PresentationLayer.Properties.Resources.Fondo_Registro;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.lbl_error_confirmarcontra);
+            this.panel1.Controls.Add(this.lbl_error_contrasena);
+            this.panel1.Controls.Add(this.lbl_error_email);
+            this.panel1.Controls.Add(this.lbl_error_nombrecompleto);
+            this.panel1.Controls.Add(this.lbl_error_nombreusuario);
             this.panel1.Controls.Add(this.btn_cancelar);
             this.panel1.Controls.Add(this.btn_registrar);
             this.panel1.Controls.Add(this.label6);
@@ -72,6 +82,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(527, 419);
             this.panel1.TabIndex = 14;
+            // 
+            // lbl_error_nombreusuario
+            // 
+            this.lbl_error_nombreusuario.AutoSize = true;
+            this.lbl_error_nombreusuario.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_error_nombreusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error_nombreusuario.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error_nombreusuario.Location = new System.Drawing.Point(207, 105);
+            this.lbl_error_nombreusuario.Name = "lbl_error_nombreusuario";
+            this.lbl_error_nombreusuario.Size = new System.Drawing.Size(154, 13);
+            this.lbl_error_nombreusuario.TabIndex = 16;
+            this.lbl_error_nombreusuario.Text = "*Este campo es necesario";
+            this.lbl_error_nombreusuario.Visible = false;
             // 
             // btn_cancelar
             // 
@@ -111,6 +134,7 @@
             this.tb_confimar_contraseña.PasswordChar = '*';
             this.tb_confimar_contraseña.Size = new System.Drawing.Size(188, 26);
             this.tb_confimar_contraseña.TabIndex = 22;
+            this.tb_confimar_contraseña.TextChanged += new System.EventHandler(this.tb_confimar_contraseña_TextChanged);
             // 
             // tb_contraseña
             // 
@@ -120,6 +144,7 @@
             this.tb_contraseña.PasswordChar = '*';
             this.tb_contraseña.Size = new System.Drawing.Size(188, 26);
             this.tb_contraseña.TabIndex = 21;
+            this.tb_contraseña.TextChanged += new System.EventHandler(this.tb_contraseña_TextChanged);
             // 
             // tb_email
             // 
@@ -128,6 +153,7 @@
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(188, 26);
             this.tb_email.TabIndex = 20;
+            this.tb_email.TextChanged += new System.EventHandler(this.tb_email_TextChanged);
             // 
             // tb_nombre_completo
             // 
@@ -136,6 +162,7 @@
             this.tb_nombre_completo.Name = "tb_nombre_completo";
             this.tb_nombre_completo.Size = new System.Drawing.Size(188, 26);
             this.tb_nombre_completo.TabIndex = 19;
+            this.tb_nombre_completo.TextChanged += new System.EventHandler(this.tb_nombre_completo_TextChanged);
             // 
             // tb_nombre_de_usuario
             // 
@@ -144,6 +171,7 @@
             this.tb_nombre_de_usuario.Name = "tb_nombre_de_usuario";
             this.tb_nombre_de_usuario.Size = new System.Drawing.Size(188, 26);
             this.tb_nombre_de_usuario.TabIndex = 18;
+            this.tb_nombre_de_usuario.TextChanged += new System.EventHandler(this.tb_nombre_de_usuario_TextChanged);
             // 
             // label5
             // 
@@ -218,6 +246,58 @@
             this.Salir.TabStop = false;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
+            // lbl_error_nombrecompleto
+            // 
+            this.lbl_error_nombrecompleto.AutoSize = true;
+            this.lbl_error_nombrecompleto.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_error_nombrecompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error_nombrecompleto.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error_nombrecompleto.Location = new System.Drawing.Point(207, 146);
+            this.lbl_error_nombrecompleto.Name = "lbl_error_nombrecompleto";
+            this.lbl_error_nombrecompleto.Size = new System.Drawing.Size(154, 13);
+            this.lbl_error_nombrecompleto.TabIndex = 26;
+            this.lbl_error_nombrecompleto.Text = "*Este campo es necesario";
+            this.lbl_error_nombrecompleto.Visible = false;
+            // 
+            // lbl_error_email
+            // 
+            this.lbl_error_email.AutoSize = true;
+            this.lbl_error_email.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_error_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error_email.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error_email.Location = new System.Drawing.Point(207, 191);
+            this.lbl_error_email.Name = "lbl_error_email";
+            this.lbl_error_email.Size = new System.Drawing.Size(154, 13);
+            this.lbl_error_email.TabIndex = 27;
+            this.lbl_error_email.Text = "*Este campo es necesario";
+            this.lbl_error_email.Visible = false;
+            // 
+            // lbl_error_contrasena
+            // 
+            this.lbl_error_contrasena.AutoSize = true;
+            this.lbl_error_contrasena.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_error_contrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error_contrasena.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error_contrasena.Location = new System.Drawing.Point(207, 231);
+            this.lbl_error_contrasena.Name = "lbl_error_contrasena";
+            this.lbl_error_contrasena.Size = new System.Drawing.Size(154, 13);
+            this.lbl_error_contrasena.TabIndex = 28;
+            this.lbl_error_contrasena.Text = "*Este campo es necesario";
+            this.lbl_error_contrasena.Visible = false;
+            // 
+            // lbl_error_confirmarcontra
+            // 
+            this.lbl_error_confirmarcontra.AutoSize = true;
+            this.lbl_error_confirmarcontra.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_error_confirmarcontra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error_confirmarcontra.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error_confirmarcontra.Location = new System.Drawing.Point(206, 273);
+            this.lbl_error_confirmarcontra.Name = "lbl_error_confirmarcontra";
+            this.lbl_error_confirmarcontra.Size = new System.Drawing.Size(154, 13);
+            this.lbl_error_confirmarcontra.TabIndex = 29;
+            this.lbl_error_confirmarcontra.Text = "*Este campo es necesario";
+            this.lbl_error_confirmarcontra.Visible = false;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,5 +334,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox Salir;
+        private System.Windows.Forms.Label lbl_error_nombreusuario;
+        private System.Windows.Forms.Label lbl_error_confirmarcontra;
+        private System.Windows.Forms.Label lbl_error_contrasena;
+        private System.Windows.Forms.Label lbl_error_email;
+        private System.Windows.Forms.Label lbl_error_nombrecompleto;
     }
 }
