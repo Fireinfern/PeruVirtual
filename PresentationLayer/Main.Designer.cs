@@ -1,12 +1,17 @@
-﻿namespace PresentationLayer
+﻿using System;
+using System.Drawing.Text;
+using System.IO;
+using System.Reflection;
+
+namespace PresentationLayer
 {
     partial class Main
     {
+       
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -34,7 +39,7 @@
             this.Minimizar = new System.Windows.Forms.PictureBox();
             this.Maximizar = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Lbl_panelTop = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelOpciones = new System.Windows.Forms.Panel();
             this.Paracas = new System.Windows.Forms.PictureBox();
@@ -70,7 +75,7 @@
             this.PanelTask.Controls.Add(this.Minimizar);
             this.PanelTask.Controls.Add(this.Maximizar);
             this.PanelTask.Controls.Add(this.Salir);
-            this.PanelTask.Controls.Add(this.label1);
+            this.PanelTask.Controls.Add(this.Lbl_panelTop);
             this.PanelTask.Controls.Add(this.pictureBox1);
             this.PanelTask.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTask.ForeColor = System.Drawing.Color.Transparent;
@@ -129,16 +134,16 @@
             this.Salir.TabStop = false;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
-            // label1
+            // Lbl_panelTop
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Hoodson Script Free Demo", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(63, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "PerúVirtual";
+            this.Lbl_panelTop.AutoSize = true;
+            this.Lbl_panelTop.Font = new System.Drawing.Font("Hoodson Script Free Demo", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_panelTop.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Lbl_panelTop.Location = new System.Drawing.Point(63, 13);
+            this.Lbl_panelTop.Name = "Lbl_panelTop";
+            this.Lbl_panelTop.Size = new System.Drawing.Size(143, 40);
+            this.Lbl_panelTop.TabIndex = 1;
+            this.Lbl_panelTop.Text = "Peru Virtual";
             // 
             // pictureBox1
             // 
@@ -333,7 +338,7 @@
         private System.Windows.Forms.PictureBox Minimizar;
         private System.Windows.Forms.PictureBox Maximizar;
         private System.Windows.Forms.PictureBox Salir;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_panelTop;
         private System.Windows.Forms.Panel PanelOpciones;
         private System.Windows.Forms.PictureBox MachuPicchu;
         private System.Windows.Forms.PictureBox Paracas;

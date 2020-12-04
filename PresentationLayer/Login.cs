@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace PresentationLayer
 {
@@ -23,6 +24,8 @@ namespace PresentationLayer
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         //-----------------------------------------------------------//
+
+        private Utilidades util = new Utilidades();
 
         Form newForm = new Form();
 
@@ -73,8 +76,11 @@ namespace PresentationLayer
             {
                 FacebookLoginBtn.Region = new Region(GraphPath);
             }
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile(util.DirPath() + @"\Resources\Hoodson free font .ttf");
+            Lbl_topPanel.Font = new Font(pfc.Families[0], 23F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
-
+            ActiveControl = usernameTB;
         }
 
         private async void FacebookLoginBtn_Click(object sender, EventArgs e)
@@ -176,12 +182,12 @@ namespace PresentationLayer
 
         private void Maximizar_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            
         }
 
         private void Minimizar_Click(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Minimized;
         }
 
         private void Restaurar_Click(object sender, EventArgs e)
@@ -228,6 +234,7 @@ namespace PresentationLayer
                 MessageBox.Show("La contraseña no puede estar vacio");
                 return;
             }
+
             var login = usuarioService.Login(usernameTB.Text, passwordTB.Text);
 
             if(login)
@@ -282,6 +289,14 @@ namespace PresentationLayer
             ActiveControl = usernameTB;
             if (passwordTB.Text.Length == 0) {
                 hint_password.Visible = true;
+            }
+        }
+
+        private void passwordTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginBtn.PerformClick();
             }
         }
     }

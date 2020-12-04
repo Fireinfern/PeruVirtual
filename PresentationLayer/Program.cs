@@ -22,4 +22,17 @@ namespace PresentationLayer
             Application.Run(new Login());
         }
     }
+
+    class Utilidades
+    {
+        public string DirPath()
+        {
+            //Prod
+            return Environment.CurrentDirectory;
+            //Dev
+            //return Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
+
+
+        }
+    }
 }

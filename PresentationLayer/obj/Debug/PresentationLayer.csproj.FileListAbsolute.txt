@@ -90,13 +90,12 @@ D:\Programacion\C#\PeruVirtual\PresentationLayer\bin\Debug\Newtonsoft.Json.dll
 D:\Programacion\C#\PeruVirtual\PresentationLayer\bin\Debug\Newtonsoft.Json.xml
 D:\Programacion\C#\PeruVirtual\PresentationLayer\bin\Debug\VO.dll
 D:\Programacion\C#\PeruVirtual\PresentationLayer\bin\Debug\VO.pdb
-C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\EntityFramework.xml
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\EntityFramework.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\PresentationLayer.exe.config
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\PresentationLayer.exe
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\PresentationLayer.pdb
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\Datos.dll
-C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\EntityFramework.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\Google.Protobuf.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\K4os.Compression.LZ4.dll
@@ -122,6 +121,7 @@ C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\M
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\Servicios.pdb
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\Servicios.dll.config
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\VO.pdb
+C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\EntityFramework.xml
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\Google.Protobuf.xml
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\PresentationLayer\bin\Debug\K4os.Compression.LZ4.xml

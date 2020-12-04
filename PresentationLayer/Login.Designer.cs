@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.topPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Lbl_topPanel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Maximizar = new System.Windows.Forms.PictureBox();
             this.Minimizar = new System.Windows.Forms.PictureBox();
@@ -61,7 +61,7 @@
             // 
             // topPanel
             // 
-            this.topPanel.Controls.Add(this.label1);
+            this.topPanel.Controls.Add(this.Lbl_topPanel);
             this.topPanel.Controls.Add(this.pictureBox1);
             this.topPanel.Controls.Add(this.Maximizar);
             this.topPanel.Controls.Add(this.Minimizar);
@@ -74,17 +74,17 @@
             this.topPanel.TabIndex = 0;
             this.topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseDown);
             // 
-            // label1
+            // Lbl_topPanel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Hoodson Script Free Demo", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(48, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 40);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "PerúVirtual";
+            this.Lbl_topPanel.AutoSize = true;
+            this.Lbl_topPanel.BackColor = System.Drawing.Color.Transparent;
+            this.Lbl_topPanel.Font = new System.Drawing.Font("Hoodson Script Free Demo", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_topPanel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Lbl_topPanel.Location = new System.Drawing.Point(48, 3);
+            this.Lbl_topPanel.Name = "Lbl_topPanel";
+            this.Lbl_topPanel.Size = new System.Drawing.Size(137, 40);
+            this.Lbl_topPanel.TabIndex = 10;
+            this.Lbl_topPanel.Text = "PerúVirtual";
             // 
             // pictureBox1
             // 
@@ -189,6 +189,7 @@
             // 
             this.hint_password.AutoSize = true;
             this.hint_password.BackColor = System.Drawing.Color.Transparent;
+            this.hint_password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.hint_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hint_password.ForeColor = System.Drawing.Color.Silver;
             this.hint_password.Location = new System.Drawing.Point(18, 9);
@@ -209,6 +210,7 @@
             this.passwordTB.Size = new System.Drawing.Size(225, 20);
             this.passwordTB.TabIndex = 0;
             this.passwordTB.TextChanged += new System.EventHandler(this.passwordTB_TextChanged);
+            this.passwordTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTB_KeyDown);
             // 
             // usernamePanel
             // 
@@ -226,6 +228,7 @@
             // 
             this.hint_username.AutoSize = true;
             this.hint_username.BackColor = System.Drawing.Color.Transparent;
+            this.hint_username.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.hint_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hint_username.ForeColor = System.Drawing.Color.Silver;
             this.hint_username.Location = new System.Drawing.Point(15, 9);
@@ -319,7 +322,7 @@
         private System.Windows.Forms.PictureBox Minimizar;
         private System.Windows.Forms.PictureBox Maximizar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_topPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox usernameTB;
         private System.Windows.Forms.Button LoginBtn;

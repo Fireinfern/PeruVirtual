@@ -9,7 +9,7 @@ namespace Datos
 
     public class UsuarioRepository
     {
-
+      
 
         public List<usuario> GetUsuarios()
         {
@@ -19,10 +19,56 @@ namespace Datos
             }
         }
 
-        public bool InsertarUsuario(usuario user)
+        public List<usuario> FindUsuario(string username, string contrasena)
         {
+            using (PeruVirtualEntities db = new PeruVirtualEntities())
+            {
+                var users = from b in db.usuario
+                            where b.username.Equals(username)
+                            where b.contrasena.Equals(contrasena)
+                            select b;
+                return users.ToList();
+            }
+        }
+
+        public bool FindByUsername(string username)
+        {
+            using (PeruVirtualEntities db = new PeruVirtualEntities())
+            {
+                var users = from b in db.usuario
+                            where b.username.Equals(username)
+                            select b;
+                if (users.ToList().Count()==0)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+        public bool FindByEmail(string email)
+        {
+            using (PeruVirtualEntities db = new PeruVirtualEntities())
+            {
+                var users = from b in db.usuario
+                            where b.correo.Equals(email)
+                            select b;
+                if (users.ToList().Count() == 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+        public int InsertarUsuario(usuario user)
+        {
+            //0 : exito
+            //1 : el username ya existe
+            //2 : el correo ya existe
+            //3 : error de servidor
             string passEncrypt = Encriptar(user.contrasena);
             user.contrasena = passEncrypt;
+            if (FindByUsername(user.username)) { return 1; };
+            if (FindByEmail(user.correo)) { return 2; };
             using (PeruVirtualEntities db = new PeruVirtualEntities())
             {
                 try
@@ -34,13 +80,13 @@ namespace Datos
                     Console.WriteLine(user.contrasena);
                     db.SaveChanges();
 
-                    return true;
+                    return 0;
                 }
                 catch(Exception ex)
                 {
 
                 }
-                return false;
+                return 3;
             }
         }
         /// Encripta una cadena
@@ -56,10 +102,24 @@ namespace Datos
 
         /*static void Main(string[] args)
         {
+            var user = new usuario();
+            user.username = "bbqms";
+            user.contrasena = "bryanxd123";
+            user.correo = "";
+            user.nombre = "";
             using (PeruVirtualEntities db = new PeruVirtualEntities())
             {
-                Console.WriteLine(db.usuario.ToList());
+                    var users = from b in db.usuario
+                                where b.username.Equals(user.username)
+                                where b.contrasena.Equals(user.contrasena)
+                                select b;
+                    foreach(var i in users.ToList())
+                    {
+                    Console.WriteLine(i.ToString());
+                    }
+                    
             }
+            Console.ReadKey();
         }*/
 
     }

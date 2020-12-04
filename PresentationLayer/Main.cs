@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.IO;
 using System.Windows.Forms;
 
@@ -19,36 +20,27 @@ namespace PresentationLayer
         public static extern bool ReleaseCapture();
         //-----------------------------------------------------------//
 
-        //DEV
-        //public string DirPath = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
 
+        private Utilidades util = new Utilidades();
 
-        //Prod
-        public string DirPath = Environment.CurrentDirectory;
-
-        public  string getDirPath()
-        {
-            return DirPath;
-        }
 
         public string Selected = "Machu Picchu";
 
         RoundedButton Button_Explorar2 = new RoundedButton();
 
+        PrivateFontCollection pfc = new PrivateFontCollection();
 
         public Main()
         {
             InitializeComponent();
-            Console.WriteLine(DirPath);
             this.Icon = Resources.MachuIcon;
             VideoPlayer.uiMode = "none";
             VideoPlayer.settings.volume = 0;
             VideoPlayer.enableContextMenu = false;
-            VideoPlayer.URL = DirPath + @"\Videos\MachuPicchu.mp4";
+            VideoPlayer.URL = util.DirPath() + @"\Videos\MachuPicchu.mp4";
             VideoPlayer.settings.setMode("loop", true);
             VideoPlayer.Ctlenabled = false;
             VideoPlayer.stretchToFit = true;
-            Console.WriteLine(DirPath + @"\Videos\MachuPicchu.mp4");
 
             Button_Explorar2.Anchor = Button_Explorar.Anchor;
             Button_Explorar2.BackgroundImage = Button_Explorar.BackgroundImage;
@@ -58,8 +50,13 @@ namespace PresentationLayer
             Resize();
             Button_Explorar.Visible = false;
             //Console.WriteLine(Button_Explorar.Location);
- 
+
             //VideoPlayer.Ctlcontrols.play();
+
+            pfc.AddFontFile(util.DirPath() + @"\Resources\Hoodson free font .ttf");
+            Lbl_panelTop.Font = new Font(pfc.Families[0], 23F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            LblTitulo.Font = new Font(pfc.Families[0], 40F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            Button_Explorar2.Font = new Font(pfc.Families[0], 21.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
         }
         //------------Manejo de Ventana-------------------------------//
         private void Salir_Click(object sender, EventArgs e)
@@ -119,7 +116,9 @@ namespace PresentationLayer
         {
             if (Selected == "Machu Picchu") return;
             LblTitulo.Text = "Machu Picchu";
-            VideoPlayer.URL = DirPath + @"\Videos\MachuPicchu.mp4";
+            LblTitulo.Font = new Font(pfc.Families[0], 40F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+
+            VideoPlayer.URL = util.DirPath() + @"\Videos\MachuPicchu.mp4";
             Selected = "Machu Picchu";
             if (MachuPicchu.BorderStyle == BorderStyle.None)
             {
@@ -142,7 +141,8 @@ namespace PresentationLayer
         {
             if (Selected == "Caral") return;
             LblTitulo.Text = "Caral";
-            VideoPlayer.URL = DirPath + @"\Videos\Caral.mp4";
+            LblTitulo.Font = new Font(pfc.Families[0], 40F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            VideoPlayer.URL = util.DirPath() + @"\Videos\Caral.mp4";
             Selected = "Caral";
             if (Caral.BorderStyle == BorderStyle.None)
             {
@@ -164,7 +164,8 @@ namespace PresentationLayer
         {
             if (Selected == "Sacsayhuaman") return;
             LblTitulo.Text = "Sacsayhuaman";
-            VideoPlayer.URL = DirPath + @"\Videos\Sacsayhuaman.mp4";
+            LblTitulo.Font = new Font(pfc.Families[0], 40F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            VideoPlayer.URL = util.DirPath() + @"\Videos\Sacsayhuaman.mp4";
             Selected = "Sacsayhuaman";
             if (Sacsayhuaman.BorderStyle == BorderStyle.None)
             {
@@ -185,7 +186,8 @@ namespace PresentationLayer
         {
             if (Selected == "Nazca") return;
             LblTitulo.Text = "Nazca";
-            VideoPlayer.URL = DirPath + @"\Videos\Nazca.mp4";
+            LblTitulo.Font = new Font(pfc.Families[0], 40F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            VideoPlayer.URL = util.DirPath() + @"\Videos\Nazca.mp4";
             Selected = "Nazca";
             if (Nazca.BorderStyle == BorderStyle.None)
             {
@@ -208,7 +210,8 @@ namespace PresentationLayer
         {
             if (Selected == "Paracas") return;
             LblTitulo.Text = "Paracas";
-            VideoPlayer.URL = DirPath + @"\Videos\Paracas.mp4";
+            LblTitulo.Font = new Font(pfc.Families[0], 40F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            VideoPlayer.URL = util.DirPath() + @"\Videos\Paracas.mp4";
             Selected = "Paracas";
             if (Sacsayhuaman.BorderStyle == BorderStyle.None)
             {
@@ -310,27 +313,7 @@ namespace PresentationLayer
         {
             return;
         }
-        //-----------------------Boton Explorar----------------------/
-        private void Explorar(object sender, EventArgs e)
-        {
-            Process p;
-            switch (Selected)
-            {
-                case "Machu Picchu":
-                    p = Process.Start(DirPath + @"\Lugares\MachuPicchu\MachuPicchu.exe");
-                    p.WaitForInputIdle();
-                    break;
-                case "Caral":
-                    p = Process.Start(DirPath + @"\Lugares\Caral\TheRealCaral.exe");
-                    p.WaitForInputIdle();
-                    break; 
-                case "Sacsayhuaman": MessageBox.Show("Sin implementar"); break;
-                case "Nazca": MessageBox.Show("Sin implementar"); break;
-                case "Paracas": MessageBox.Show("Sin implementar"); break;
-                default: break;
-            }
-        }
-        //----------------------------------------------------------//
+
         //-------------------------Boton Antiguo-Nuevo--------------------//
         private void Opciones_Antiguo_Nuevo(object sender, EventArgs e)
         {

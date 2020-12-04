@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,18 +19,16 @@ namespace PresentationLayer
         public string Selected = "";
 
 
-        //DEV
-        //public string DirPath = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
-
-
-        //Prod
-        public string DirPath = Environment.CurrentDirectory;
+        private Utilidades util = new Utilidades();
+        PrivateFontCollection pfc = new PrivateFontCollection();
 
         public Opciones()
         {
             InitializeComponent();
             btnAntiguo.FlatAppearance.BorderSize = 0;
             btnActual.FlatAppearance.BorderSize = 0;
+            pfc.AddFontFile(util.DirPath() + @"\Resources\Hoodson free font .ttf");
+            label1.Font = new Font(pfc.Families[0], 14F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
         }
 
         private void btnActual_Click(object sender, EventArgs e)
@@ -38,11 +37,11 @@ namespace PresentationLayer
             switch (Selected)
             {
                 case "Machu Picchu":
-                    p = Process.Start(DirPath + @"\Lugares\MachuPicchu\MachuPicchu.exe");
+                    p = Process.Start(util.DirPath() + @"\Lugares\MachuPicchu\MachuPicchu.exe");
                     p.WaitForInputIdle();
                     break;
                 case "Caral":
-                    p = Process.Start(DirPath + @"\Lugares\Caral\TheRealCaral.exe");
+                    p = Process.Start(util.DirPath() + @"\Lugares\Caral\TheRealCaral.exe");
                     p.WaitForInputIdle();
                     break;
                 case "Sacsayhuaman": MessageBox.Show("Sin implementar"); break;

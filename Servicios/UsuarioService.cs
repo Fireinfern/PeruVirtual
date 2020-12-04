@@ -13,21 +13,15 @@ namespace Servicios
         UsuarioRepository usuarioRep = new UsuarioRepository();
         public bool Login(String username, String contrasena)
         {
-            
-            var users = usuarioRep.GetUsuarios();
-            string passEncrypt = Encriptar(contrasena);
-
-            foreach(var u in users)
+            List<usuario> users = usuarioRep.FindUsuario(username, Encriptar(contrasena));
+            if (users.Count != 0)
             {
-                if (u.username + u.contrasena == username + passEncrypt)
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }
 
-        public bool Registro(usuario user)
+        public int Registro(usuario user)
         {
            return usuarioRep.InsertarUsuario(user);
         }
