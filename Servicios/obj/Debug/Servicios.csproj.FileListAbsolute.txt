@@ -64,3 +64,47 @@ C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\Servicios\obj\Debug\Servicios
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\Servicios\obj\Debug\Servicios.csproj.CopyComplete
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\Servicios\obj\Debug\Servicios.dll
 C:\Users\Bryan\Documents\Proyectos\TDP\PeruVirtual\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Servicios.dll.config
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Servicios.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Datos.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\EntityFramework.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Google.Protobuf.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\MySql.Data.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Renci.SshNet.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Buffers.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Memory.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\VO.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Zstandard.Net.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Datos.pdb
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Datos.dll.config
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\VO.pdb
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\EntityFramework.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Google.Protobuf.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\MySql.Data.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\Renci.SshNet.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Buffers.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Memory.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\obj\Debug\Servicios.csprojAssemblyReference.cache
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\obj\Debug\Servicios.dll
+C:\Users\Bryan\Documents\Visual Studio 2019\GitHub\PeruVirtual\Servicios\obj\Debug\Servicios.pdb

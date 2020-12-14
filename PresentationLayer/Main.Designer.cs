@@ -35,6 +35,7 @@ namespace PresentationLayer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.PanelTask = new System.Windows.Forms.Panel();
+            this.CloseSession = new System.Windows.Forms.PictureBox();
             this.Restaurar = new System.Windows.Forms.PictureBox();
             this.Minimizar = new System.Windows.Forms.PictureBox();
             this.Maximizar = new System.Windows.Forms.PictureBox();
@@ -53,6 +54,7 @@ namespace PresentationLayer
             this.Button_Explorar = new System.Windows.Forms.Button();
             this.VideoPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.PanelTask.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseSession)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).BeginInit();
@@ -71,6 +73,7 @@ namespace PresentationLayer
             // PanelTask
             // 
             this.PanelTask.BackColor = System.Drawing.Color.Black;
+            this.PanelTask.Controls.Add(this.CloseSession);
             this.PanelTask.Controls.Add(this.Restaurar);
             this.PanelTask.Controls.Add(this.Minimizar);
             this.PanelTask.Controls.Add(this.Maximizar);
@@ -84,6 +87,19 @@ namespace PresentationLayer
             this.PanelTask.Size = new System.Drawing.Size(1280, 60);
             this.PanelTask.TabIndex = 0;
             this.PanelTask.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TaskPanel_MouseDown);
+            // 
+            // CloseSession
+            // 
+            this.CloseSession.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseSession.Image = ((System.Drawing.Image)(resources.GetObject("CloseSession.Image")));
+            this.CloseSession.Location = new System.Drawing.Point(1123, 16);
+            this.CloseSession.Margin = new System.Windows.Forms.Padding(0);
+            this.CloseSession.Name = "CloseSession";
+            this.CloseSession.Size = new System.Drawing.Size(30, 30);
+            this.CloseSession.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CloseSession.TabIndex = 6;
+            this.CloseSession.TabStop = false;
+            this.CloseSession.Click += new System.EventHandler(this.CloseSession_Click);
             // 
             // Restaurar
             // 
@@ -137,11 +153,11 @@ namespace PresentationLayer
             // Lbl_panelTop
             // 
             this.Lbl_panelTop.AutoSize = true;
-            this.Lbl_panelTop.Font = new System.Drawing.Font("Hoodson Script Free Demo", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_panelTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_panelTop.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Lbl_panelTop.Location = new System.Drawing.Point(63, 13);
             this.Lbl_panelTop.Name = "Lbl_panelTop";
-            this.Lbl_panelTop.Size = new System.Drawing.Size(143, 40);
+            this.Lbl_panelTop.Size = new System.Drawing.Size(176, 35);
             this.Lbl_panelTop.TabIndex = 1;
             this.Lbl_panelTop.Text = "Peru Virtual";
             // 
@@ -240,7 +256,7 @@ namespace PresentationLayer
             // 
             this.LblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.LblTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LblTitulo.Font = new System.Drawing.Font("Hoodson Script Free Demo", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitulo.Location = new System.Drawing.Point(0, 60);
             this.LblTitulo.Name = "LblTitulo";
             this.LblTitulo.Size = new System.Drawing.Size(1280, 60);
@@ -276,7 +292,7 @@ namespace PresentationLayer
             this.Button_Explorar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Button_Explorar.FlatAppearance.BorderSize = 0;
             this.Button_Explorar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button_Explorar.Font = new System.Drawing.Font("Hoodson Script Free Demo", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Explorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Explorar.Location = new System.Drawing.Point(546, 369);
             this.Button_Explorar.Name = "Button_Explorar";
             this.Button_Explorar.Size = new System.Drawing.Size(250, 50);
@@ -314,6 +330,7 @@ namespace PresentationLayer
             this.Text = "Peru";
             this.PanelTask.ResumeLayout(false);
             this.PanelTask.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseSession)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).EndInit();
@@ -351,5 +368,6 @@ namespace PresentationLayer
         private System.Windows.Forms.Panel PanelVideo;
         private System.Windows.Forms.Button Button_Explorar;
         private AxWMPLib.AxWindowsMediaPlayer VideoPlayer;
+        private System.Windows.Forms.PictureBox CloseSession;
     }
 }

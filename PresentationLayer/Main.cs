@@ -61,7 +61,15 @@ namespace PresentationLayer
         //------------Manejo de Ventana-------------------------------//
         private void Salir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("¿Esta seguro que desea salir de la aplicación?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
         }
         private void Minimizar_Click(object sender, EventArgs e)
         {
@@ -323,6 +331,22 @@ namespace PresentationLayer
             //opciones.setSeleccionado(Selected);
             opciones.StartPosition = FormStartPosition.CenterParent;
             opciones.ShowDialog();
+        }
+
+        private void CloseSession_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Esta seguro que desea cerrar sesión? \nSera enviado a la pantalla principal.", "Confirmación de cierre de sesión", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Close();
+                Login login = new Login();
+                login.Show();
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
+
         }
     }
     class RoundedButton : Button

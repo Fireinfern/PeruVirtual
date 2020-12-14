@@ -177,7 +177,15 @@ namespace PresentationLayer
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("¿Esta seguro que desea salir de la aplicación?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (result == DialogResult.No)
+            {
+               
+            }      
         }
 
         private void Maximizar_Click(object sender, EventArgs e)
@@ -226,12 +234,12 @@ namespace PresentationLayer
 
             if(usernameTB.Text.Length == 0)
             {
-                MessageBox.Show("El nombre de usuario no puede estar vacio");
+                MessageBox.Show("El nombre de usuario no puede estar vacio.","Complete los campos");
                 return;
             }
             if (passwordTB.Text.Length == 0)
             {
-                MessageBox.Show("La contraseña no puede estar vacio");
+                MessageBox.Show("La contraseña no puede estar vacia.", "Complete los campos");
                 return;
             }
 
@@ -245,7 +253,7 @@ namespace PresentationLayer
             }
             else
             {
-                MessageBox.Show("No se encuentra registrado");
+                MessageBox.Show("No se encuentra registrado.", "Lo sentimos...");
             }
         }
 

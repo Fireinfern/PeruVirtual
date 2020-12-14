@@ -28,9 +28,9 @@ namespace PresentationLayer
         public string DirPath()
         {
             //Prod
-            return Environment.CurrentDirectory;
+            //return Environment.CurrentDirectory;
             //Dev
-            //return Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
+            return Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName;
 
 
         }
