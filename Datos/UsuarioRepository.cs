@@ -102,7 +102,7 @@ namespace Datos
 
         /*static void Main(string[] args)
         {
-            var user = new usuario();
+            /*var user = new usuario();
             user.username = "bbqms";
             user.contrasena = "bryanxd123";
             user.correo = "";
@@ -110,16 +110,15 @@ namespace Datos
             using (PeruVirtualEntities db = new PeruVirtualEntities())
             {
                     var users = from b in db.usuario
-                                where b.username.Equals(user.username)
-                                where b.contrasena.Equals(user.contrasena)
                                 select b;
                     foreach(var i in users.ToList())
                     {
-                    Console.WriteLine(i.ToString());
+                     Console.WriteLine(i.ToString());
                     }
                     
             }
-            Console.ReadKey();
+            
+            //Console.ReadKey();
         }*/
 
     }
